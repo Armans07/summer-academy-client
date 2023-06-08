@@ -1,9 +1,10 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import img1 from '../../../assets/banner 1.jpg'
-import img2 from '../../../assets/banner 2.jpg'
-import img3 from '../../../assets/banner 3.jpg'
+import img1 from '../../../assets/banner1 (1).jpg'
+import img2 from '../../../assets/banner1 (2).jpg'
+import img3 from '../../../assets/banner1 (3).jpg'
+
 const Banner = () => {
     return (
         <div className='my-10'>

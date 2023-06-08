@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import img from '../../../assets/banner 3.jpg'
+import img from '../../../assets/signUp.jpg'
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { Result } from 'postcss';
 import Swal from 'sweetalert2';
@@ -14,11 +14,11 @@ const SignUp = () => {
 
     const onSubmit = data => {
         console.log(data)
-        createUser(data.email, data.password, data.photourl)
+        createUser(data.email, data.password, data.photoURL)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                updateUserProfile(data.name, data.photoUrl)
+                updateUserProfile(data.name, data.photoURL)
                 .then(()=>{
                     console.log('User Profile info update');
                     reset()
@@ -77,8 +77,8 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="text" name='photourl' placeholder="Photo URL" className="input input-bordered" {...register("photourl", { required: true })} />
-                                {errors.photourl && <span>Photo URL is required</span>}
+                                <input type="photoURL" name='photoURL' placeholder="Photo URL" className="input input-bordered" {...register("photoURL", { required: true })} />
+                                {errors.photoURL && <span>Photo URL is required</span>}
                             </div>
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

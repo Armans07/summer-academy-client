@@ -6,6 +6,8 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Home/Login/Login";
 import SignUp from "../Pages/Home/Signup/SignUp";
+import PrivetRoute from "./PrivetRoute";
+import Extra from "../Extra/Extra";
 
   const router = createBrowserRouter([
     {
@@ -23,6 +25,10 @@ import SignUp from "../Pages/Home/Signup/SignUp";
         {
             path:'/signup',
             element:<SignUp></SignUp>
+        },
+        {
+            path:'/dashboard',
+            element:<PrivetRoute><Extra></Extra> </PrivetRoute>
         }
       ]
     },
