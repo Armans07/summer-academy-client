@@ -6,8 +6,8 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Home/Login/Login";
 import SignUp from "../Pages/Home/Signup/SignUp";
 import PrivetRoute from "./PrivetRoute";
-import Extra from "../Extra/Extra";
 import ErrorPage from "../Error/ErrorPage";
+import Extra from "../Extra/Extra";
 
   const router = createBrowserRouter([
     {
@@ -28,7 +28,7 @@ import ErrorPage from "../Error/ErrorPage";
         },
         {
             path:'/dashboard',
-            element:<PrivetRoute><Extra></Extra> </PrivetRoute>
+            element:<PrivetRoute><Extra></Extra></PrivetRoute>
         }
       ]
     },{

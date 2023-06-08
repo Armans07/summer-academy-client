@@ -1,0 +1,56 @@
+[
+    {
+      "_id": 1,
+      "musicType": "Classical",
+      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
+      "name": "Classical Music Class",
+      "instructor": "John Smith",
+      "availableSeats": 10,
+      "price": 100
+    },
+    {
+      "_id": 2,
+      "musicType": "Rock",
+      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
+      "name": "Rock Music Class",
+      "instructor": "Jane Johnson",
+      "availableSeats": 8,
+      "price": 80
+    },
+    {
+      "_id": 3,
+      "musicType": "Jazz",
+      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
+      "name": "Jazz Music Class",
+      "instructor": "Michael Davis",
+      "availableSeats": 12,
+      "price": 120
+    },
+    {
+      "_id": 4,
+      "musicType": "Pop",
+      "image": "pop.jpg",
+      "name": "Pop Music Class",
+      "instructor": "Emily Roberts",
+      "availableSeats": 15,
+      "price": 90
+    },
+    {
+      "_id": 5,
+      "musicType": "Hip Hop",
+      "image": "hiphop.jpg",
+      "name": "Hip Hop Dance Class",
+      "instructor": "David Johnson",
+      "availableSeats": 20,
+      "price": 150
+    },
+    {
+      "_id": 6,
+      "musicType": "Country",
+      "image": "country.jpg",
+      "name": "Country Music Class",
+      "instructor": "Sarah Thompson",
+      "availableSeats": 10,
+      "price": 100
+    }
+  ]
