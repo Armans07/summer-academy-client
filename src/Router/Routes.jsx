@@ -7,6 +7,7 @@ import Login from "../Pages/Home/Login/Login";
 import SignUp from "../Pages/Home/Signup/SignUp";
 import PrivetRoute from "./PrivetRoute";
 import Extra from "../Extra/Extra";
+import ErrorPage from "../Error/ErrorPage";
 
   const router = createBrowserRouter([
     {
@@ -30,7 +31,11 @@ import Extra from "../Extra/Extra";
             element:<PrivetRoute><Extra></Extra> </PrivetRoute>
         }
       ]
-    },
+    },{
+        path:'/*',
+        element:<ErrorPage></ErrorPage>
+
+    }
   ]);
 
   export default router;
