@@ -1,13 +1,13 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import img1 from '../../../assets/banner1 (1).jpg'
-import img2 from '../../../assets/banner1 (2).jpg'
-import img3 from '../../../assets/banner1 (3).jpg'
+import img1 from '../../../assets/debby-hudson-asviIGR3CPE-unsplash.jpg'
+import img2 from '../../../assets/deleece-cook-zzjLGF_6dx4-unsplash.jpg'
+import img3 from '../../../assets/element5-digital-7K_agbqPqYo-unsplash.jpg'
 
 const Banner = () => {
     return (
-        <div className=' container mx-auto my-10'>
+        <div className='container mx-auto my-10'>
             <Carousel>
                 <div>
                     <img src={img1} />

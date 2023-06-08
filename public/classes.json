@@ -1,54 +1,54 @@
 [
     {
       "_id": 1,
-      "musicType": "Classical",
-      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
-      "name": "Classical Music Class",
+      "sportType": "Football",
+      "image": "https://i.ibb.co/KmhjVsF/ball-geb937e17f-1280.jpg",
+      "name": "Football",
       "instructor": "John Smith",
       "availableSeats": 10,
       "price": 100
     },
     {
       "_id": 2,
-      "musicType": "Rock",
-      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
-      "name": "Rock Music Class",
+      "sportType": "Cricket",
+      "image": "https://i.ibb.co/7t2hZrx/ball-ga340ccb84-1280-removebg-preview.png",
+      "name": "Cricket",
       "instructor": "Jane Johnson",
       "availableSeats": 8,
       "price": 80
     },
     {
       "_id": 3,
-      "musicType": "Jazz",
-      "image": "https://scontent.fdac24-3.fna.fbcdn.net/v/t39.30808-6/352369909_1292121531387094_1103963664207137028_n.jpg?stp=dst-jpg_s600x600&_nc_cat=1&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeFylhjXwVOFQCEMzGoXgfQhHoYHAezuAloehgcB7O4CWoEu00bWt0Nkj_lT6kHO51P2lyCtJs8HdvntBHnTxO0P&_nc_ohc=verpX1NFMk4AX8PgXjS&_nc_ht=scontent.fdac24-3.fna&oh=00_AfAWN6jiwqrdeJ_pdXD2ot2wVBUEnODqFH2MHhlY1rvITg&oe=64873003",
-      "name": "Jazz Music Class",
+      "sportType": "BasketBall",
+      "image": "https://i.ibb.co/x3TPfJH/andrey-matveev-z-Ko-Uhq-OIw9-M-unsplash.jpg",
+      "name": "BasketBall",
       "instructor": "Michael Davis",
       "availableSeats": 12,
       "price": 120
     },
     {
       "_id": 4,
-      "musicType": "Pop",
-      "image": "pop.jpg",
-      "name": "Pop Music Class",
+      "sportType": "Volleyball",
+      "image": "https://i.ibb.co/WyqVRT9/chandan-chaurasia-t-Aco-HIv-Ctw-M-unsplash.jpg",
+      "name": "Volleyball",
       "instructor": "Emily Roberts",
       "availableSeats": 15,
       "price": 90
     },
     {
       "_id": 5,
-      "musicType": "Hip Hop",
-      "image": "hiphop.jpg",
-      "name": "Hip Hop Dance Class",
+      "sportType": "Golf",
+      "image": "https://i.ibb.co/TcdVcyK/splash-pic-ufc-DM0-Ap-EBs-unsplash.jpgg",
+      "name": "Golf",
       "instructor": "David Johnson",
       "availableSeats": 20,
       "price": 150
     },
     {
       "_id": 6,
-      "musicType": "Country",
-      "image": "country.jpg",
-      "name": "Country Music Class",
+      "sportType": "Swimming",
+      "image": "https://i.ibb.co/qxr538b/brian-matangelo-BUPa-AMSOd-E-unsplash.jpg",
+      "name": "Swimming",
       "instructor": "Sarah Thompson",
       "availableSeats": 10,
       "price": 100

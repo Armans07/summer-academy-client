@@ -9,7 +9,10 @@ const MusicCard = ({ item }) => {
                     <img src={image} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="card-body text-left">
+                    <div className='flex gap-3 align-middle'>
                     <h2 className="card-title">{name}</h2>
+                    <span className="badge badge-secondary mt-1">POPULAR</span>
+                    </div>
                     <p>Instructor Name: {instructor}</p>
                     <p>Price: ${price}</p>
                     <p>Available Stock: {availableSeats}</p>

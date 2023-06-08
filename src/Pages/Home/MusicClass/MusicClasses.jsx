@@ -15,7 +15,7 @@ const MusicClasses = () => {
 
   return (
     <div>
-      <h2 className='text-center my-10 text-3xl font-semibold'>Popular Classes</h2>
+      <h2 className='text-center my-10 text-3xl font-semibold'>Our Popular Classes</h2>
       <div className='grid grid-cols-3 gap-2 mb-5'>
         {
           classes.map(item => <MusicCard
