@@ -7,7 +7,10 @@ import Login from "../Pages/Home/Login/Login";
 import SignUp from "../Pages/Home/Signup/SignUp";
 import PrivetRoute from "./PrivetRoute";
 import ErrorPage from "../Error/ErrorPage";
-import Extra from "../Extra/Extra";
+import MusicClasses from "../Pages/Home/MusicClass/MusicClasses";
+import InstructorCard from "../Pages/Home/PopularInstructor/InstructorCard";
+import AllClasses from "../Pages/Home/MusicClass/AllClasses";
+import Dashboard from "../Layout/Dashboard/Dashboard";
 
   const router = createBrowserRouter([
     {
@@ -28,8 +31,16 @@ import Extra from "../Extra/Extra";
         },
         {
             path:'/dashboard',
-            element:<PrivetRoute><Extra></Extra></PrivetRoute>
+            element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+        },{
+          path:'/classes',
+          element:<AllClasses></AllClasses>
+        },
+        {
+          path:'/instructors',
+          element:<InstructorCard></InstructorCard>
         }
+
       ]
     },{
         path:'/*',

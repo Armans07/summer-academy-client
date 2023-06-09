@@ -1,56 +1,102 @@
 [
-    {
-      "_id": 1,
-      "sportType": "Football",
-      "image": "https://i.ibb.co/KmhjVsF/ball-geb937e17f-1280.jpg",
-      "name": "Football",
-      "instructor": "John Smith",
-      "availableSeats": 10,
-      "price": 100
-    },
-    {
-      "_id": 2,
-      "sportType": "Cricket",
-      "image": "https://i.ibb.co/7t2hZrx/ball-ga340ccb84-1280-removebg-preview.png",
-      "name": "Cricket",
-      "instructor": "Jane Johnson",
-      "availableSeats": 8,
-      "price": 80
-    },
-    {
-      "_id": 3,
-      "sportType": "BasketBall",
-      "image": "https://i.ibb.co/x3TPfJH/andrey-matveev-z-Ko-Uhq-OIw9-M-unsplash.jpg",
-      "name": "BasketBall",
-      "instructor": "Michael Davis",
-      "availableSeats": 12,
-      "price": 120
-    },
-    {
-      "_id": 4,
-      "sportType": "Volleyball",
-      "image": "https://i.ibb.co/WyqVRT9/chandan-chaurasia-t-Aco-HIv-Ctw-M-unsplash.jpg",
-      "name": "Volleyball",
-      "instructor": "Emily Roberts",
-      "availableSeats": 15,
-      "price": 90
-    },
-    {
-      "_id": 5,
-      "sportType": "Golf",
-      "image": "https://i.ibb.co/TcdVcyK/splash-pic-ufc-DM0-Ap-EBs-unsplash.jpgg",
-      "name": "Golf",
-      "instructor": "David Johnson",
-      "availableSeats": 20,
-      "price": 150
-    },
-    {
-      "_id": 6,
-      "sportType": "Swimming",
-      "image": "https://i.ibb.co/qxr538b/brian-matangelo-BUPa-AMSOd-E-unsplash.jpg",
-      "name": "Swimming",
-      "instructor": "Sarah Thompson",
-      "availableSeats": 10,
-      "price": 100
-    }
-  ]
+  {
+    "_id": 1,
+    "sportType": "Football",
+    "image": "https://i.ibb.co/KmhjVsF/ball-geb937e17f-1280.jpg",
+    "name": "Football",
+    "instructor": "John Smith",
+    "availableSeats": 10,
+    "price": 100,
+    "category": "Popular"
+  },
+  {
+    "_id": 2,
+    "sportType": "Cricket",
+    "image": "https://i.ibb.co/7t2hZrx/ball-ga340ccb84-1280-removebg-preview.png",
+    "name": "Cricket",
+    "instructor": "Jane Johnson",
+    "availableSeats": 8,
+    "price": 80,
+    "category": "Popular"
+  },
+  {
+    "_id": 3,
+    "sportType": "BasketBall",
+    "image": "https://i.ibb.co/x3TPfJH/andrey-matveev-z-Ko-Uhq-OIw9-M-unsplash.jpg",
+    "name": "BasketBall",
+    "instructor": "Michael Davis",
+    "availableSeats": 12,
+    "price": 120,
+    "category": "Popular"
+  },
+  {
+    "_id": 4,
+    "sportType": "Volleyball",
+    "image": "https://i.ibb.co/WyqVRT9/chandan-chaurasia-t-Aco-HIv-Ctw-M-unsplash.jpg",
+    "name": "Volleyball",
+    "instructor": "Emily Roberts",
+    "availableSeats": 15,
+    "price": 90,
+    "category": "Popular"
+  },
+  {
+    "_id": 5,
+    "sportType": "Golf",
+    "image": "https://i.ibb.co/TcdVcyK/splash-pic-ufc-DM0-Ap-EBs-unsplash.jpgg",
+    "name": "Golf",
+    "instructor": "David Johnson",
+    "availableSeats": 20,
+    "price": 150,
+    "category": "Popular"
+  },
+  {
+    "_id": 6,
+    "sportType": "Swimming",
+    "image": "https://i.ibb.co/qxr538b/brian-matangelo-BUPa-AMSOd-E-unsplash.jpg",
+    "name": "Swimming",
+    "instructor": "Sarah Thompson",
+    "availableSeats": 10,
+    "price": 100,
+    "category": "Popular"
+  },
+  {
+    "_id": 7,
+    "sportType": "Hokky",
+    "image": "https://i.ibb.co/6JJkPYX/hockey-player-during-match-grass.jpg",
+    "name": "Hokie",
+    "instructor": "Robert Wilson",
+    "availableSeats": 6,
+    "price": 70,
+    "category": "common"
+  },
+  {
+    "_id": 8,
+    "sportType": "Boxing",
+    "image": "https://i.ibb.co/F8bYns8/download-1.jpg",
+    "name": "Boxing",
+    "instructor": "James Anderson",
+    "availableSeats": 10,
+    "price": 120,
+    "category": "common"
+  },
+  {
+    "_id": 9,
+    "sportType": "Yoga",
+    "image": "https://i.ibb.co/7nPCjN5/images.jpg",
+    "name": "Yoga",
+    "instructor": "Samantha Lee",
+    "availableSeats": 15,
+    "price": 80,
+    "category": "common"
+  },
+  {
+    "_id": 10,
+    "sportType": "Tennis",
+    "image": "https://i.ibb.co/cgt6B6T/download-2.jpg",
+    "name": "Tennis",
+    "instructor": "Laura Martinez",
+    "availableSeats": 8,
+    "price": 90,
+    "category": "common"
+  }
+]

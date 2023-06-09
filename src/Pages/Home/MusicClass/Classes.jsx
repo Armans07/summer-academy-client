@@ -1,7 +1,7 @@
 import React from 'react';
-import {  Zoom } from 'react-awesome-reveal';
+import { Zoom } from 'react-awesome-reveal';
 
-const MusicCard = ({ item }) => {
+const Classes = ({ item }) => {
     const { image, name, instructor, price, availableSeats } = item;
     return (
         <div className='grid grid-cols-6'>
@@ -13,7 +13,6 @@ const MusicCard = ({ item }) => {
                     <div className="card-body text-left">
                         <div className='flex gap-3 align-middle'>
                             <h2 className="card-title">{name}</h2>
-                            <span className="badge badge-secondary mt-1">POPULAR</span>
                         </div>
                         <p>Instructor Name: {instructor}</p>
                         <p>Price: ${price}</p>
@@ -28,4 +27,4 @@ const MusicCard = ({ item }) => {
     );
 };
 
-export default MusicCard;
+export default Classes;

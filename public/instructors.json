@@ -1,39 +1,80 @@
- [
-      {
-        "_id": "1",
-        "name": "John Smith",
-        "image": "https://i.ibb.co/k3jJBF5/akash-rai-PRn2j-QX3xk-I-unsplash.jpg",
-        "email": "john.smith@example.com"
-      },
-      {
-        "_id": "2",
-        "name": "Sarah Johnson",
-        "image": "https://i.ibb.co/Ksgfk6w/anthony-mckissic-h5p-Ahmn-ZT8s-unsplash.jpg",
-        "email": "sarah.johnson@example.com"
-      },
-      {
-        "_id": "3",
-        "name": "Michael Davis",
-        "image": "https://i.ibb.co/gSBjR3k/anthony-mckissic-q-Myv-Nrk-YBc-unsplash.jpg",
-        "email": "michael.davis@example.com"
-      },
-      {
-        "_id": "4",
-        "name": "Emily Thompson",
-        "image": "https://i.ibb.co/4WTBPFr/estanislau-valmana-Y9s-V1-E-fd10-unsplash.jpg",
-        "email": "emily.thompson@example.com"
-      },
-      {
-        "_id": "5",
-        "name": "Daniel Lee",
-        "image": "https://i.ibb.co/jMHkHVc/mick-haupt-m0i-Xio5-FF7-M-unsplash.jpg",
-        "email": "daniel.lee@example.com"
-      },
-      {
-        "_id": "6",
-        "name": "Sophia Garcia",
-        "image": "https://i.ibb.co/HgWGbCw/erik-dungan-l-NUi7-W4iwok-unsplash.jpg",
-        "email": "sophia.garcia@example.com"
-      }
-    ]
+[
+  {
+    "_id": "1",
+    "name": "John Smith",
+    "image": "https://i.ibb.co/k3jJBF5/akash-rai-PRn2j-QX3xk-I-unsplash.jpg",
+    "email": "john.smith@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "2",
+    "name": "Sarah Johnson",
+    "image": "https://i.ibb.co/Ksgfk6w/anthony-mckissic-h5p-Ahmn-ZT8s-unsplash.jpg",
+    "email": "sarah.johnson@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "3",
+    "name": "Michael Davis",
+    "image": "https://i.ibb.co/gSBjR3k/anthony-mckissic-q-Myv-Nrk-YBc-unsplash.jpg",
+    "email": "michael.davis@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "4",
+    "name": "Emily Thompson",
+    "image": "https://i.ibb.co/4WTBPFr/estanislau-valmana-Y9s-V1-E-fd10-unsplash.jpg",
+    "email": "emily.thompson@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "5",
+    "name": "Daniel Lee",
+    "image": "https://i.ibb.co/jMHkHVc/mick-haupt-m0i-Xio5-FF7-M-unsplash.jpg",
+    "email": "daniel.lee@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "6",
+    "name": "Sophia Garcia",
+    "image": "https://i.ibb.co/HgWGbCw/erik-dungan-l-NUi7-W4iwok-unsplash.jpg",
+    "email": "sophia.garcia@example.com",
+    "category": "Popular"
+  },
+  {
+    "_id": "7",
+    "name": "Jessica Anderson",
+    "image": "https://example.com/jessica-anderson.jpg",
+    "email": "jessica.anderson@example.com",
+    "category": "Fitness"
+  },
+  {
+    "_id": "8",
+    "name": "Andrew Roberts",
+    "image": "https://example.com/andrew-roberts.jpg",
+    "email": "andrew.roberts@example.com",
+    "category": "Tennis"
+  },
+  {
+    "_id": "9",
+    "name": "Olivia Thompson",
+    "image": "https://example.com/olivia-thompson.jpg",
+    "email": "olivia.thompson@example.com",
+    "category": "Yoga"
+  },
+  {
+    "_id": "10",
+    "name": "Jacob Johnson",
+    "image": "https://example.com/jacob-johnson.jpg",
+    "email": "jacob.johnson@example.com",
+    "category": "Basketball"
+  },
+  {
+    "_id": "11",
+    "name": "Emma Davis",
+    "image": "https://example.com/emma-davis.jpg",
+    "email": "emma.davis@example.com",
+    "category": "Cycling"
+  }
+]
   

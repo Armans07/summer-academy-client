@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InstructorCard from './InstructorCard';
+import { Slide } from "react-awesome-reveal";
 
 const PopularInstructors = () => {
 
@@ -8,13 +9,17 @@ const PopularInstructors = () => {
         fetch('instructors.json')
             .then(res => res.json())
             .then(data => {
-                setInstructors(data)
+                const popularInstructors = data.filter(item => item.category === 'Popular')
+                setInstructors(popularInstructors)
             })
 
     }, [])
     return (
         <div>
-            <h2 className='text-center my-10 text-3xl font-semibold'>Our Popular Instructors</h2>
+            <Slide>
+                <h2 className='text-center my-10 text-3xl font-semibold'>Our Popular Instructors</h2>
+            </Slide>
+
             <div className='grid grid-cols-3 gap-2 my-10'>
                 {
                     instructors.map(instructor => <InstructorCard
