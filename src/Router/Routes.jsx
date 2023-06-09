@@ -34,7 +34,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
+        children:[
+          {
+            path: 'myclass',
+            element: <MyClass></MyClass>
+          }
+        ]
       }, {
         path: '/classes',
         element: <AllClasses></AllClasses>
@@ -42,10 +48,7 @@ const router = createBrowserRouter([
       {
         path: '/instructors',
         element: <AllInstructors></AllInstructors>
-      }, {
-        path: '/myclass',
-        element: <MyClass></MyClass>
-      }
+      },
 
     ]
   },
