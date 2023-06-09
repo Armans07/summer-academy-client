@@ -1,19 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import InstructorCard from './InstructorCard';
 import { Slide } from "react-awesome-reveal";
+import useInstructors from '../../../hooks/UseInstructor';
 
 const PopularInstructors = () => {
 
-    const [instructors, setInstructors] = useState([]);
-    useEffect(() => {
-        fetch('instructors.json')
-            .then(res => res.json())
-            .then(data => {
-                const popularInstructors = data.filter(item => item.category === 'Popular')
-                setInstructors(popularInstructors)
-            })
-
-    }, [])
+    const [popularInstructors]= useInstructors()
+    const instructors = popularInstructors.filter(item => item.category === 'Popular')
     return (
         <div>
             <Slide>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {  Zoom } from 'react-awesome-reveal';
+import { Link } from 'react-router-dom';
 
 const MusicCard = ({ item }) => {
     const { image, name, instructor, price, availableSeats } = item;
@@ -19,7 +20,7 @@ const MusicCard = ({ item }) => {
                         <p>Price: ${price}</p>
                         <p>Available Stock: {availableSeats}</p>
                         <div className="card-actions">
-                            <button className="btn btn-block">Select</button>
+                           <Link to='/classes'> <button className="btn btn-block">Select</button></Link>
                         </div>
                     </div>
                 </div>

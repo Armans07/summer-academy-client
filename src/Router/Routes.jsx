@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Home/Login/Login";
@@ -11,42 +11,49 @@ import MusicClasses from "../Pages/Home/MusicClass/MusicClasses";
 import InstructorCard from "../Pages/Home/PopularInstructor/InstructorCard";
 import AllClasses from "../Pages/Home/MusicClass/AllClasses";
 import Dashboard from "../Layout/Dashboard/Dashboard";
+import Instructors from "../Pages/Home/PopularInstructor/Instructors";
+import AllInstructors from "../Pages/Home/PopularInstructor/AllInstructors";
+import MyClass from "../Layout/Dashboard/MyClass/MyClass";
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-            path:'/login',
-            element:<Login></Login>
-        },
-        {
-            path:'/signup',
-            element:<SignUp></SignUp>
-        },
-        {
-            path:'/dashboard',
-            element:<PrivetRoute><Dashboard></Dashboard></PrivetRoute>
-        },{
-          path:'/classes',
-          element:<AllClasses></AllClasses>
-        },
-        {
-          path:'/instructors',
-          element:<InstructorCard></InstructorCard>
-        }
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/dashboard',
+        element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>
+      }, {
+        path: '/classes',
+        element: <AllClasses></AllClasses>
+      },
+      {
+        path: '/instructors',
+        element: <AllInstructors></AllInstructors>
+      }, {
+        path: '/myclass',
+        element: <MyClass></MyClass>
+      }
 
-      ]
-    },{
-        path:'/*',
-        element:<ErrorPage></ErrorPage>
+    ]
+  },
+  {
+    path: '/*',
+    element: <ErrorPage></ErrorPage>
 
-    }
-  ]);
+  }
+]);
 
-  export default router;
+export default router;

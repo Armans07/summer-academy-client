@@ -1,35 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import useInstructors from '../../../hooks/UseInstructor';
 import Instructors from './Instructors';
-import InstructorCard from './InstructorCard';
+import { Slide } from 'react-awesome-reveal';
 
 const AllInstructors = () => {
-
-    const [instructors, setInstructors] = useState([]);
-    useEffect(() => {
-        fetch('/instructors.json')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                
-            })
-
-    }, [])
+    const [allInstructors] = useInstructors();
 
     return (
         <div>
-        <Slide>
-            <h2 className='text-center my-10 text-3xl font-semibold'>Our Popular Instructors</h2>
-        </Slide>
+            <Slide>
+                <h2 className='text-center my-10 text-3xl font-semibold'>Our Popular Instructors</h2>
+            </Slide>
 
-        <div className='grid grid-cols-3 gap-2 my-10'>
-            {
-                instructors.map(instructor => <InstructorCard
-                    key={instructor._id}
-                    instructor={instructor}
-                ></InstructorCard>)
-            }
+            <div className='grid grid-cols-3 gap-2 my-10 mx-auto'>
+                {
+                    allInstructors.map(allInstructor => <Instructors 
+                    key={allInstructor._id}
+                    allInstructor={allInstructor}
+                    ></Instructors>)
+                }
+            </div>
         </div>
-    </div>
     );
 };
 

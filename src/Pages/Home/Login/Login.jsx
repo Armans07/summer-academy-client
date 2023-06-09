@@ -60,7 +60,6 @@ const Login = () => {
 
     return (
         <div>
-            <h2>Login Page</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="hero min-h-screen p-20">
                 <div className="hero-content flex-col md:flex-row-reverse">
                     <div className="card w-full max-w-sm shadow-2xl bg-base-100">

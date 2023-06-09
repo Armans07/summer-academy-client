@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Classes from './Classes';
+import useClass from '../../../hooks/useClass';
 
 const AllClasses = () => {
-    const [classes, setClasses] = useState([]);
 
-    useEffect(() => {
-        fetch('classes.json')
-            .then(res => res.json())
-            .then(data => {
-                setClasses(data)
-            })
-    }, [])
+    const [allClasses]=useClass()
+
     return (
         <div className='grid grid-cols-3 gap-2 mb-5'>
             {
-                classes?.map(item => <Classes
+                allClasses?.map(item => <Classes
                     key={item._id}
                     item={item}
                 ></Classes>)
