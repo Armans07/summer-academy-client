@@ -14,6 +14,8 @@ import Dashboard from "../Layout/Dashboard/Dashboard";
 import Instructors from "../Pages/Home/PopularInstructor/Instructors";
 import AllInstructors from "../Pages/Home/PopularInstructor/AllInstructors";
 import MyClass from "../Layout/Dashboard/MyClass/MyClass";
+import Payment from "../Layout/Dashboard/Pyment/Payment";
+import AddClss from "../Layout/Dashboard/AddClass/AddClass";
 
 const router = createBrowserRouter([
   {
@@ -35,10 +37,18 @@ const router = createBrowserRouter([
       {
         path: '/dashboard',
         element: <PrivetRoute><Dashboard></Dashboard></PrivetRoute>,
-        children:[
+        children: [
           {
             path: 'myclass',
             element: <MyClass></MyClass>
+          },
+          {
+            path: 'payment',
+            element: <Payment></Payment>
+          },
+          {
+            path:'addclass',
+            element:<AddClss></AddClss>
           }
         ]
       }, {

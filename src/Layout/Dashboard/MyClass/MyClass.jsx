@@ -1,16 +1,48 @@
 import React from 'react';
 import useSelected from '../../../hooks/useSelected';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyClass = () => {
-    const [selected] = useSelected();
+    const [selected, refetch] = useSelected();
     const total = selected.reduce((sum, item) => item.price + sum, 0)
 
+    // TODO error 404 not found
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/selected/${item._id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+            }
+        })
+    }
+
     return (
-        <div>
+        <div className='w-full'>
             <div className='font-semibold flex justify-evenly mb-5'>
                 <h2 className='text-2xl'>My Selected class: {selected.length}</h2>
                 <h2 className='text-2xl'>Selected class Price: ${total}</h2>
-                <button className='btn btn-xs'>PAY</button>
             </div>
             <div className="overflow-x-auto">
                 <table className="table">
@@ -42,14 +74,14 @@ const MyClass = () => {
                                     </div>
                                 </td>
                                 <td>
-                                  {classes.name}
+                                    {classes.name}
                                 </td>
                                 <td>{classes.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">Remove</button>
+                                    <button onClick={() => handleDelete(classes)} className="btn btn-ghost btn-xs">Remove</button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">PAY</button>
+                                    <Link to='/dashboard/payment'><button className="btn btn-ghost btn-xs">PAY</button></Link>
                                 </td>
                             </tr>)
                         }
