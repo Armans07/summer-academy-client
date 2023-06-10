@@ -3,7 +3,7 @@ import useSelected from '../../../hooks/useSelected';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
-const MyClass = () => {
+const SelectedClass = () => {
     const [selected, refetch] = useSelected();
     const total = selected.reduce((sum, item) => item.price + sum, 0)
 
@@ -93,4 +93,4 @@ const MyClass = () => {
     );
 };
 
-export default MyClass;
+export default SelectedClass;

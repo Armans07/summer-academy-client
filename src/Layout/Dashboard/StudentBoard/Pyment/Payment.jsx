@@ -2,7 +2,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import React from 'react';
 import CheckOutForm from './CheckOutForm';
 import { loadStripe } from '@stripe/stripe-js';
-import useClass from '../../../hooks/useClass';
+import useClass from '../../../../hooks/useClass';
 
 
 
