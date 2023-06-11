@@ -1,12 +1,16 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useSelected from "../../hooks/useSelected";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructors from "../../hooks/UseInstructor";
 
 
 const Dashboard = () => {
 
     const [selected] = useSelected()
 
-    const isAdmin = true;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin()
+    const [isInstructors] = useInstructors()
 
     return (
         <div className="drawer lg:drawer-open">
@@ -19,26 +23,19 @@ const Dashboard = () => {
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
 
+                    <div>
+                        <NavLink to='/dashboard/myclass'><li><a>My Selected Class {selected?.length || 0}</a></li></NavLink>
+                        <NavLink to='/dashboard/enrolledclass'><li><a>My Enrolled Class </a></li></NavLink>
+                    </div>
                     {
                         isAdmin ? <div>
                             <NavLink to='/dashboard/manegeclass'><li><a> Manage Classes</a></li></NavLink>
                             <NavLink to='/dashboard/manegeuser'><li><a> Manage Users</a></li></NavLink>
-                        </div> :
-                            <div>
-                                <NavLink to='/dashboard/myclass'><li><a>My Selected Class {selected?.length || 0}</a></li></NavLink>
-                                <NavLink to='/dashboard/enrolledclass'><li><a>My Enrolled Class </a></li></NavLink>
-                            </div>
-                            //  || <div>
-                            //     <NavLink to='/dashboard/addclass'><li><a>Add Class</a></li></NavLink>
-                            //     <NavLink to='/dashboard/instructoradded'><li><a>My Class</a></li></NavLink>
-                            // </div>
+                        </div> : <div>
+                            <NavLink to='/dashboard/addclass'><li><a>Add Class</a></li></NavLink>
+                            <NavLink to='/dashboard/instructoradded'><li><a>My Class</a></li></NavLink>
+                        </div>
                     }
-
-
-
-
-
-
 
                 </ul>
 

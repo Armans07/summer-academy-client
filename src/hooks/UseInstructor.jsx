@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useInstructors = () => {
+const useInstructor = () => {
     const [instructors, setInstructors] = useState([]);
     const [loading,setLoading]= useState(true)
     useEffect(() => {
@@ -15,4 +15,4 @@ const useInstructors = () => {
     return [instructors,loading]
 }
 
-export default useInstructors;
+export default useInstructor;
