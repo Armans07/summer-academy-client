@@ -1,73 +1,194 @@
-import React, { useContext } from 'react';
-import logo from '../assets/31746352_7799135-removebg-preview.png'
+
+
+import React, { useContext, useState } from 'react';
+import logo from '../assets/31746352_7799135-removebg-preview.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext)
-
-    const handleLogOut = () => {
-        logOut()
-            .then(() => { })
-            .catch(error => console.log(error))
-
-    }
-
-    return (
-        <nav className="bg-white border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="/" className="flex items-center">
-                    <img src={logo} className="h-8 mr-3" />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Summer champ</span>
-                </a>
-
-                <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu-2">
-                    <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <Link to='/'> <li>
-                            <li>
-                                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</a>
-                            </li>
-                        </li></Link>
-                        <Link to='/instructors'>
-                            <li>
-                                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Instructors</a>
-                            </li>
-                        </Link>
-                        <Link to='/classes'>
-                            <li>
-                                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Classes</a>
-                            </li>
-                        </Link>
-                        {user && <Link to='/dashboard'>
-                            <li>
-                                <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</a>
-                            </li>
-                        </Link>}
-                        ,<Link to='contact'>  <li>
-                            <a href="#" className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                        </li></Link>
-                    </ul>
-                </div>
-
-                <div className='flex gap-2 items-center md:order-2'>
-                    {
-                        user &&
-                        <img title={user.displayName} className="w-8 h-8 rounded-full" src={user.photoURL} />
-                    }
-
-                    {user ?
-
-                        <Link>
-                            <button onClick={handleLogOut} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Log Out</button></Link> :
-                        <Link to='/login'>  <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button></Link>}
-                </div>
+  const { user, logOut } = useContext(AuthContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
 
+  const handleModeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
-            </div>
-        </nav>
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch(error => console.log(error));
+  };
 
-    );
+  const handleMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="/" className="flex items-center">
+          <img src={logo} className="h-8 mr-3" alt="Logo" />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+            Summer champ
+          </span>
+        </a>
+
+        {/* Mobile Menu */}
+        <div
+          className={`items-center justify-between w-full md:hidden ${
+            isMenuOpen ? 'block' : 'hidden'
+          }`}
+          id="mobile-menu"
+        >
+          <ul className="flex flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50">
+            <li>
+              <Link
+                to="/"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                onClick={handleMenuToggle}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/instructors"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                onClick={handleMenuToggle}
+              >
+                Instructors
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/classes"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                onClick={handleMenuToggle}
+              >
+                Classes
+              </Link>
+            </li>
+            {user && (
+              <li>
+                <Link
+                  to="/dashboard"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                  onClick={handleMenuToggle}
+                >
+                  Dashboard
+                </Link>
+              </li>
+            )}
+            <li>
+              <Link
+                to="/contact"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                onClick={handleMenuToggle}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Desktop Menu */}
+        <div className="items-center justify-between hidden w-full md:flex md:w-auto">
+          <ul className="flex font-medium space-x-8">
+            <li>
+              <Link to="/" className="text-gray-900 dark:text-white">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/instructors" className="text-gray-900 dark:text-white">
+                Instructors
+              </Link>
+            </li>
+            <li>
+              <Link to="/classes" className="text-gray-900 dark:text-white">
+                Classes
+              </Link>
+            </li>
+            {user && (
+              <li>
+                <Link to="/dashboard" className="text-gray-900 dark:text-white">
+                  Dashboard
+                </Link>
+              </li>
+            )}
+            <li>
+              <Link to="/contact" className="text-gray-900 dark:text-white">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* User Actions */}
+        <div className="flex gap-2 items-center">
+          {user && (
+            <img
+              src={user.photoURL}
+              alt={user.displayName}
+              title={user.displayName}
+              className="w-8 h-8 rounded-full"
+            />
+          )}
+
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              type="button"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Log Out
+            </button>
+          ) : (
+            <Link to="/login">
+              <button
+                type="button"
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              >
+                Login
+              </button>
+            </Link>
+          )}
+
+          {/* Hamburger Icon */}
+          <div
+            className="block md:hidden cursor-pointer"
+            onClick={handleMenuToggle}
+          >
+            <svg
+              className="w-6 h-6 fill-current text-gray-900 dark:text-white"
+              viewBox="0 0 24 24"
+            >
+              {isMenuOpen ? (
+                <path
+                  d="M19 12H5M19 6H5M19 18H5"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              ) : (
+                <path
+                  d="M4 6h16M4 12h16M4 18h16"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              )}
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
+
+
+

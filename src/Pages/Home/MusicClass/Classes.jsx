@@ -17,7 +17,7 @@ const Classes = ({ item }) => {
         console.log(item);
         if (user && user.email) {
             const selectedItem = { orderItemId: _id, name, image, price, email: user.email }
-            fetch('http://localhost:5000/selected', {
+            fetch('https://summer-champ-server.vercel.app/selected', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

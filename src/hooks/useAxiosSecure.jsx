@@ -6,7 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import useAuth from './useAuth';
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', 
+  baseURL: 'https://summer-champ-server.vercel.app', 
 });
 
 const useAxiosSecure = () => {
