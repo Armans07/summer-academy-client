@@ -1,7 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useSelected from "../../hooks/useSelected";
 import useAdmin from "../../hooks/useAdmin";
-import useInstructor from "../../hooks/UseInstructor";
 import useInstructors from "../../hooks/useInstructors";
 
 

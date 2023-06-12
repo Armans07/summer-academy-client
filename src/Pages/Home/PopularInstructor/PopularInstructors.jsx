@@ -1,10 +1,10 @@
 import React from 'react';
 import InstructorCard from './InstructorCard';
 import { Slide } from "react-awesome-reveal";
-import useInstructors from '../../../hooks/UseInstructor';
+import UseLoadInstructor from '../../../hooks/UseLoadInstructor';
 
 const PopularInstructors = () => {
-  const [popularInstructors] = useInstructors();
+  const [popularInstructors] = UseLoadInstructor();
   const instructors = popularInstructors.filter(item => item.category === 'Popular');
 
   return (

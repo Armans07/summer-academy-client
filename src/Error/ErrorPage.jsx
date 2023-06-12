@@ -8,7 +8,8 @@ const ErrorPage = () => {
             <div className='mx-auto'>
                 <img className='mx-auto' style={{ height: "400px" }} src={errorImg} alt="" />
                 <br />
-                <button className='btn btn-primary text-center'><Link to='/'>Back To Home</Link></button>
+                
+                <Link to="/"><button className='btn btn-primary text-center'>Back To Home</button></Link>
             </div>
         </div>
     );

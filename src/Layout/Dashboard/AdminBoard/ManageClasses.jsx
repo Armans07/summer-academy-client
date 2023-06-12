@@ -6,10 +6,10 @@ const ManageClasses = () => {
     const [managedClasses, setManagedClasses] = useState([]);
 
     useEffect(() => {
-        fetch(`https://summer-champ-server.vercel.app/addclass/${user?.email}`)
+        fetch(`https://summer-champ-server.vercel.app/loadedclass/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setManagedClasses(data)
+                console.log(data)
             });
     }, [user])
 

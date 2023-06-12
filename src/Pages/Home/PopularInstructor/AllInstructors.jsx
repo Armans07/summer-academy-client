@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useInstructors from '../../../hooks/UseInstructor';
+import useInstructors from '../../../hooks/UseLoadInstructor';
 import Instructors from './Instructors';
 import { Slide } from 'react-awesome-reveal';
 
