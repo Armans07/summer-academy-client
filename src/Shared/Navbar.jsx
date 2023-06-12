@@ -4,16 +4,11 @@ import React, { useContext, useState } from 'react';
 import logo from '../assets/31746352_7799135-removebg-preview.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import DarkLightMood from '../Pages/Home/DarkLightMood';
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-
-  const handleModeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-  };
 
   const handleLogOut = () => {
     logOut()
@@ -26,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
+    <nav className="bg-white border-gray-200 dark:bg-gray-700 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
           <img src={logo} className="h-8 mr-3" alt="Logo" />
@@ -34,6 +29,7 @@ const Navbar = () => {
             Summer champ
           </span>
         </a>
+        
 
         {/* Mobile Menu */}
         <div
@@ -46,7 +42,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 "
                 onClick={handleMenuToggle}
               >
                 Home
@@ -55,7 +51,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/instructors"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 "
                 onClick={handleMenuToggle}
               >
                 Instructors
@@ -64,7 +60,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/classes"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 "
                 onClick={handleMenuToggle}
               >
                 Classes
@@ -74,7 +70,7 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/dashboard"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 "
                   onClick={handleMenuToggle}
                 >
                   Dashboard
@@ -84,13 +80,14 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 dark:text-white"
+                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 "
                 onClick={handleMenuToggle}
               >
                 Contact
               </Link>
             </li>
           </ul>
+         
         </div>
 
         {/* Desktop Menu */}
@@ -122,6 +119,9 @@ const Navbar = () => {
               <Link to="/contact" className="text-gray-900 dark:text-white">
                 Contact
               </Link>
+            </li>
+            <li>
+              
             </li>
           </ul>
         </div>
@@ -155,6 +155,7 @@ const Navbar = () => {
               </button>
             </Link>
           )}
+          <DarkLightMood></DarkLightMood>
 
           {/* Hamburger Icon */}
           <div
@@ -162,7 +163,7 @@ const Navbar = () => {
             onClick={handleMenuToggle}
           >
             <svg
-              className="w-6 h-6 fill-current text-gray-900 dark:text-white"
+              className="w-6 h-6 fill-current"
               viewBox="0 0 24 24"
             >
               {isMenuOpen ? (
