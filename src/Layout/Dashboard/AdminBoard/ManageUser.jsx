@@ -1,9 +1,10 @@
 
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import AOS from 'aos';
 
 const ManageUser = () => {
     const [axiosSecure] = useAxiosSecure()
@@ -11,6 +12,10 @@ const ManageUser = () => {
         const res = await axiosSecure.get('/users');
         return res.data;
     });
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     const handleMakeAdmin = (user) => {
         fetch(`https://summer-champ-server.vercel.app/users/admin/${user._id}`, {
@@ -53,27 +58,27 @@ const ManageUser = () => {
     };
 
     return (
-        <div className="w-full">
-            <h2>Managed User {users.length}</h2>
+        <div className="w-full my-5">
+            <h2 className='text-center text-3xl font-bold text-orange-700'>Total user: {users.length}</h2>
             <div className="w-full">
-                <div className="overflow-x-auto">
-                    <table className="table">
-                        <thead>
-                            <tr>
+                <div className="overflow-x-auto p-2" data-aos="fade-left" data-aos-duration="1500">
+                    <table className="table rounded-xl">
+                        <thead className='bg-orange-400 text-lg font-semibold'>
+                            <tr className='font-semibold text-black'>
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Instructor</th>
-                                <th>Action</th>
+                                <th className='text-center'>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody className='bg-orange-300 font-semibold text-sm' >
                             {users.map((user, index) => (
                                 <tr key={user._id}>
                                     <td>{index + 1}</td>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
 
+                                    <div className='flex justify-center items-center'>
                                     <td>
                                         {user.role === 'instructor' ? (
                                             <div className="badge badge-neutral">Instructor</div>
@@ -83,16 +88,18 @@ const ManageUser = () => {
                                             </button>
                                         )}
                                     </td>
-
+                                    
                                     <td>
-                                        {user.role === 'admin' ? (
-                                            <div className="badge badge-neutral">Admin</div>
-                                        ) : (
-                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-sm">
-                                                Admin
-                                            </button>
-                                        )}
-                                    </td>
+                                            {user.role === 'admin' ? (
+                                                <div className="badge badge-neutral">Admin</div>
+                                            ) : (
+                                                <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-sm">
+                                                    Admin
+                                                </button>
+                                            )}
+                                        </td>
+                                    </div>
+
                                 </tr>
                             ))}
                         </tbody>

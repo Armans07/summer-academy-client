@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useSelected from '../../../hooks/useSelected';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import { IoBagRemove } from "react-icons/io5";
+import { MdPayment } from "react-icons/md";
+import AOS from 'aos';
 
 const SelectedClass = () => {
     const [selected, refetch] = useSelected();
     const total = selected.reduce((sum, item) => item.price + sum, 0)
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
 
     // TODO error 404 not found
 
@@ -39,15 +46,16 @@ const SelectedClass = () => {
     }
 
     return (
-        <div className='w-full'>
+        <div className='w-full p-1 my-2'>
             <div className='font-semibold flex justify-evenly mb-5'>
-                <h2 className='text-2xl'>My Selected class: {selected.length}</h2>
-                <h2 className='text-2xl'>Selected class Price: ${total}</h2>
+                <h2 className='text-2xl text-orange-700' data-aos="fade-right">Selected class: {selected.length} </h2>
+                <h2 className='text-2xl text-orange-700' data-aos="fade-left">Total Price: ${total}</h2>
             </div>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    <thead>
-                        <tr>
+            <hr />
+            <div className="overflow-x-auto mt-5" data-aos="fade-left" data-aos-duration="1500">
+                <table className="table rounded-xl">
+                    <thead className='bg-orange-400 text-lg font-semibold'>
+                        <tr className='font-semibold text-black'>
                             <th>#</th>
                             <th>Class</th>
                             <th>Name</th>
@@ -56,7 +64,7 @@ const SelectedClass = () => {
                             <th>Enroll</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='bg-orange-300 font-semibold text-sm'>
                         {
                             selected.map((classes, index) => <tr
                                 key={classes._id}
@@ -76,12 +84,12 @@ const SelectedClass = () => {
                                 <td>
                                     {classes.name}
                                 </td>
-                                <td>{classes.price}</td>
+                                <td>${classes.price}</td>
                                 <td>
-                                    <button onClick={() => handleDelete(classes)} className="btn btn-ghost btn-xs">Remove</button>
+                                    <button onClick={() => handleDelete(classes)} className="btn btn-ghost hover:bg-orange-300"><IoBagRemove className='text-orange-700 text-2xl'></IoBagRemove></button>
                                 </td>
                                 <td>
-                                    <Link to='/dashboard/payment'><button className="btn btn-ghost btn-xs">PAY</button></Link>
+                                    <Link to='/dashboard/payment'><button className="btn btn-ghost hover:bg-orange-300"><MdPayment className='text-orange-700 text-2xl'></MdPayment></button></Link>
                                 </td>
                             </tr>)
                         }

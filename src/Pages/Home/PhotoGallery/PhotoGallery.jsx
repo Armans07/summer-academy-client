@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Slide } from 'react-awesome-reveal';
+import AOS from 'aos';
 
 const PhotoGallery = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
 
-    <div className=" min-h-screen py-12 px-4 sm:px-6 lg:px-8 my-10">
+    <div className="shadow-lg min-h-screen py-12 px-4 sm:px-6 lg:px-8 my-10">
       <div className="max-w-6xl mx-auto">
         <Slide>
-          <h1 className="text-center text-3xl font-semibold mb-10">Academy Photo Gallery</h1>
+          <h1 className="text-center text-orange-700 underline text-3xl font-semibold mb-10" data-aos="zoom-in" data-aos-duration="1500">Academy Photo Gallery</h1>
         </Slide>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 ">
-          <div className="relative">
+          <div className="relative" data-aos="fade-up-right" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/JdnWrsd/football-trainer-teaching-his-pupils.jpg"
               alt="Image 1"
@@ -29,7 +35,7 @@ const PhotoGallery = () => {
               </svg>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="flip-left" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/PwKqdZt/taiki-ishikawa-ZWVNmb-Pr1-FA-unsplash.jpg"
               alt="Image 1"
@@ -48,7 +54,7 @@ const PhotoGallery = () => {
               </svg>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="fade-up-left" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/Dkb7NtP/football-concept-with-slate.jpg"
               alt="Image 1"
@@ -67,7 +73,7 @@ const PhotoGallery = () => {
               </svg>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="fade-down-right" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/YhMSGRw/football-trainer-teaching-kids-high-angle.jpg"
               alt="Image 1"
@@ -86,7 +92,7 @@ const PhotoGallery = () => {
               </svg>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="flip-right" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/rZkvmm9/team-celebrating-win-silver-cup-2.jpg"
               alt="Image 1"
@@ -105,7 +111,7 @@ const PhotoGallery = () => {
               </svg>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative" data-aos="fade-down-left" data-aos-duration="1500">
             <img
               src="https://i.ibb.co/t29ZJFY/team-celebrating-win-silver-cup-1.jpg"
               alt="Image 2"

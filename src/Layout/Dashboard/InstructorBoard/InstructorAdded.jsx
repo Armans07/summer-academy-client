@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { Link } from 'react-router-dom';
+import InstructorAddedCard from './InstructorAddedCard';
 
 const InstructorAdded = () => {
     const { user } = useAuth();
@@ -15,60 +16,12 @@ const InstructorAdded = () => {
     }, [user])
 
     return (
-        <div className='w-full'>
-            <h2>Instructor added {instructorClasses.length}</h2>
-            <div className="overflow-x-auto">
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Class</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Pending</th>
-                            <th>Approved</th>
-                            <th>Denied</th>
-                            <th>Feedback</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            instructorClasses.map((instructorClass, index) => <tr
-                                key={instructorClass._id}
-                            >
-                                <td>
-                                    {index + 1}
-                                </td>
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src={instructorClass.image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    {instructorClass.name}
-                                </td>
-                                <td>{instructorClass.price}</td>
-                                <td>
-                                    <button  className="btn btn-ghost btn-xs">Pending</button>
-                                </td>
-                                <td>
-                                    <button className="btn btn-ghost btn-xs">Approved</button>
-                                </td>
-                                <td>
-                                    <button className="btn btn-ghost btn-xs">Denied</button>
-                                </td>
-                                <td>
-                                    <button className="btn btn-ghost btn-xs">Feedback</button>
-                                </td>
-                            </tr>)
-                        }
-                    </tbody>
-
-                </table>
+        <div >
+            <h2 className='text-3xl text-center font-bold mt-5 text-orange-700'>My new class : {instructorClasses.length}</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 px-2' data-aos="fade-left" data-aos-duration="1500">
+                {instructorClasses.map(instructorClass => (
+                    <InstructorAddedCard key={instructorClass._id} instructorClass={instructorClass} />
+                ))}
             </div>
         </div>
     );

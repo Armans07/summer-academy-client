@@ -19,14 +19,17 @@ const Payment = () => {
     }, 0)
     const price = parseFloat(amount)
     return (
-        <div className='w-full'>
-            <h2>Please Payment</h2>
+        <div className="w-full max-w-md mx-auto p-6 bg-gradient-to-r from-orange-500 via-orange-700 to-orange-600 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 className="text-2xl font-extrabold text-white mb-6">Payment Checkout</h2>
 
-            <Elements stripe={stripePromise}>
-                <CheckOutForm classes={classes} price={price}></CheckOutForm>
-            </Elements>
-
+            <div className="bg-white p-6 rounded-lg shadow-md">
+                <Elements stripe={stripePromise}>
+                    <CheckOutForm classes={classes} price={price}></CheckOutForm>
+                </Elements>
+            </div>
         </div>
+
+
     );
 };
 

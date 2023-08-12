@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../../assets/signUp.jpg'
 import { AuthContext } from '../../../Provider/AuthProvider';
-import { Result } from 'postcss';
 import Swal from 'sweetalert2';
+
 
 
 const SignUp = () => {
@@ -12,7 +12,6 @@ const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate()
-
 
     const onSubmit = data => {
         console.log(data)
@@ -43,23 +42,20 @@ const SignUp = () => {
                                         }
                                     })
                                     navigate('/')
-
                                 }
                             })
                         reset()
-
-
                     })
                     .catch(error => console.log(error))
             })
-
-
     };
+
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)} className="hero min-h-screen p-20">
-                <div className="hero-content flex-col md:flex-row-reverse">
-                    <div className="card w-full max-w-sm shadow-2xl bg-base-100">
+        <div className=' background-image: linear-gradient(to top, var(--tw-gradient-stops))'>
+            <form onSubmit={handleSubmit(onSubmit)} className="">
+                <div className="hero-content flex flex-col md:flex-row-reverse">
+                    <div className="card w-full max-w-3xl  ">
+                        <h2 className='text-center font-semibold text-xl'>Please Create Your Account !</h2>
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -86,13 +82,6 @@ const SignUp = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Confirm Password</span>
-                                </label>
-                                <input type="password" name='confirmpassword' placeholder="confirm password" className="input input-bordered" {...register("confirmpassword", { required: true })} />
-                                {errors.confirmpassword && <span>Confirmation password is required</span>}
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
                                 <input type="photoURL" name='photoURL' placeholder="Photo URL" className="input input-bordered" {...register("photoURL", { required: true })} />
@@ -102,15 +91,15 @@ const SignUp = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                             <div className="form-control mb-2 mt-6">
-                                <input className='btn btn-primary' type="submit" value="Sign Up" />
+                                <input disabled={false} className='btn btn-primary bg-orange-700 hover:bg-orange-600 hover:text-black' type="submit" value="Sign Up" />
 
-                                <p><small>Have an account ? <Link to="/login">Please login</Link></small></p>
+                                <p className='mt-1'><small className='mt-2 text-xs font-semibold'>Already Have An Account ?  <Link className='text-blue-600' to="/signup">Please Login</Link></small></p>
                             </div>
                         </div>
                     </div>
                     <div className="text-center lg:text-left">
 
-                        <img src={img} alt="" />
+                        <img className='rounded-xl' src={img} alt="" />
                     </div>
                 </div>
             </form>

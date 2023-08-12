@@ -1,17 +1,21 @@
-import React, { useContext } from 'react';
-import { Zoom } from 'react-awesome-reveal';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useSelected from '../../../hooks/useSelected';
+import { BsCartCheckFill } from "react-icons/bs";
+import AOS from 'aos';
 
 const Classes = ({ item }) => {
     const { _id, image, name, instructor, price, availableSeats } = item;
     const { user } = useContext(AuthContext)
-    const [, refetch]= useSelected()
+    const [ selected,refetch]= useSelected()
     const navigate = useNavigate()
     const location = useLocation()
 
+    useEffect(() => {
+        AOS.init();
+      }, [])
 
     const handleSelecetClass = item => {
         console.log(item);
@@ -55,28 +59,27 @@ const Classes = ({ item }) => {
         }
 
     }
-
-
     return (
-        <div className='grid grid-cols-6'>
-            <Zoom>
-                <div className="card w-96 bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={image} alt="Shoes" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body text-left">
-                        <div className='flex gap-3 align-middle'>
-                            <h2 className="card-title">{name}</h2>
-                        </div>
-                        <p>Instructor Name: {instructor}</p>
-                        <p>Price: ${price}</p>
-                        <p>Available Stock: {availableSeats}</p>
-                        <div className="card-actions">
-                            <button onClick={() => handleSelecetClass(item)} className="btn btn-block">Select</button>
+
+        <div className="mx-auto hover:border-y-amber-800">
+            <div className=" shadow-xl rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                <img src={image} alt="Class image" className="rounded-lg h-60 w-96  hover:scale-105" data-aos="fade-down" data-aos-duration="1000"/>
+                <div className="p-5" data-aos="fade-up" data-aos-duration="1500">
+                    <div className='flex justify-between items-center align-middle gap-2 my-1' >
+                        <h3 className="text-gray-900 font-bold text-lg tracking-tight dark:text-white">{name} </h3>
+                        <div className='font-extrabold text-orange-700 text-xl'> || </div>
+                        <h3 className="text-black font-bold text-lg tracking-tight dark:text-white hover:text-orange-700">{instructor} (Instructor) </h3>
+                    </div>
+                    <h2 className='font-semibold'>Availbale Seat:  {availableSeats}</h2>
+                    <div className="flex items-center justify-between my-1">
+                        <span className="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
+                        <div >
+                        <button onClick={() => handleSelecetClass(item)} className="btn text-4xl text-orange-700 hover:text-black hover:bg-orange-400"><BsCartCheckFill></BsCartCheckFill></button>
+                            
                         </div>
                     </div>
                 </div>
-            </Zoom>
+            </div>
         </div>
     );
 };

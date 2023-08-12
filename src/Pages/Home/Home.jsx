@@ -2,15 +2,21 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import MusicClasses from './MusicClass/MusicClasses';
 import PopularInstructors from './PopularInstructor/PopularInstructors';
-import ContactPage from './ContactUs/PhotoGallery';
+import StudentFeedbackSection from './StudentFeedback/StudentFeedbackSection';
+import PhotoGallery from './PhotoGallery/PhotoGallery';
+import AboutSection from './AboutUs/AboutSection';
+
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <MusicClasses></MusicClasses>
+            <StudentFeedbackSection></StudentFeedbackSection>
             <PopularInstructors></PopularInstructors>
-            <ContactPage></ContactPage>
+            <PhotoGallery></PhotoGallery>
+            <AboutSection></AboutSection>
+
         </div>
     );
 };
